@@ -1,17 +1,23 @@
 import { StyleSheet } from 'react-native';
-import { scale, verticalScale, moderateScale,colors } from '../../theme';
+import { scale, verticalScale, moderateScale, colors } from '../../theme';
+
 const styles = StyleSheet.create({
-  inputContainerStyles: {
-    height: 42,
-    width: scale(310),
-    borderColor: colors.approxGainsboro,
-    borderRadius: 6,
-    justifyContent: 'center',
-    borderWidth: 1,
-    paddingLeft: scale(5),
-    fontSize: moderateScale(14),
-    marginTop: verticalScale(10),
-    color: colors.approxMatterhorn
+    container: {
+        padding: scale(50),
+        flex: 1,
+        backgroundColor: colors.white
+    },
+   inputContainerStyles: {
+        height: verticalScale(50),
+        width: scale(310),
+        borderColor: colors.approxGainsboro,
+        borderRadius: 6,
+        justifyContent: 'center',
+        borderWidth: 1,
+        paddingLeft: scale(5),
+        fontSize: moderateScale(14),
+        marginTop: verticalScale(10),
+        color: colors.approxMatterhorn
     },
     inputContainer: {
         marginTop: verticalScale(10),
@@ -22,13 +28,13 @@ const styles = StyleSheet.create({
     passwordStyle: {
         position: "absolute",
         right: scale(3),
-        top:verticalScale(-11)
+        top:verticalScale(-15)
     },
     loginButton: {
-        paddingVertical: 10,
-        paddingHorizontal: 10,
+        paddingVertical: verticalScale(10),
+        paddingHorizontal: scale(10),
         backgroundColor: colors.twitterBlue,
-        marginTop: 10
+        marginTop: verticalScale(10)
     },
     errorStyle: {
         color:colors.red

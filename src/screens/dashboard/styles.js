@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { scale, verticalScale, moderateScale,colors } from '../../theme';
+import { scale, verticalScale, colors } from '../../theme';
+
 const styles = StyleSheet.create({
     separatorStyle:{
         width: "100%",

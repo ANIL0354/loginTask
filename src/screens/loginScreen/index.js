@@ -12,15 +12,18 @@ const loginScreen = ({ navigation}) => {
     const [passwordVisible, setPasswordVisible] = useState(false)
     const [emailValid, setEmailValid] = useState('')
     const [passwordValid, setPasswordValid] = useState('')
-    const [response,setResponse]=useState('')
+    const [response, setResponse] = useState('')
+    
     const onUserNameChange = useCallback((value) => {
         setUserName(value)
         setResponse("")
     }, [])
+
     const onPasswordChange = useCallback((value) => {
         setPassword(value)
         setResponse("")
     }, [])
+
     const emailValidor = () => {
         if (!userName) { 
             return false
@@ -33,6 +36,7 @@ const loginScreen = ({ navigation}) => {
             return true
         }
     }
+
     const passwordValidator = () => {
         if (!password) { 
             return false
@@ -42,9 +46,11 @@ const loginScreen = ({ navigation}) => {
             return true
         }
     }
+
     useEffect(() => { 
         emailValidor()
     }, [userName])
+
     useEffect(() => { 
         passwordValidator()
     }, [password])
@@ -74,7 +80,8 @@ const loginScreen = ({ navigation}) => {
             }
         }
     }
-  return( <SafeAreaView style={{padding: 50, flex: 1, backgroundColor: '#fff'}}>
+
+  return( <View style={styles.container}>
       <Text>LoginScreen</Text>
       <CustomInput label={"Username"} onChangeText={onUserNameChange} value={userName}
       />
@@ -96,7 +103,7 @@ const loginScreen = ({ navigation}) => {
           <Text style={styles.loginText}>Login</Text>
       </TouchableOpacity>
       {response && <Text style={styles.errorStyle}>{response}</Text>}
-  </SafeAreaView>);
+  </View>);
 }
 
 export default loginScreen;
